@@ -27,8 +27,8 @@ test_script:
   - cd c:\projects\face-recognition
   - npm install
   - npm test
+  - 7z a face-recognition.zip c:\projects\face-recognition
   
 artifacts:
-  - path: face-recognition
-    name: MyApp
-    type: zip
+  - path: face-recognition.zip
+    name: face-recognition
