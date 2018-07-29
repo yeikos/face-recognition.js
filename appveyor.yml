@@ -29,6 +29,6 @@ test_script:
   - npm test
   
 artifacts:
-  - path: c:\projects
+  - path: face-recognition
     name: MyApp
     type: zip
