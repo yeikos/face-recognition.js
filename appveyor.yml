@@ -30,7 +30,6 @@ test_script:
   - mkdir c:\projects\face-recognition\build\Release\
   - copy c:\projects\face-recognition\openblas\* c:\projects\face-recognition\build\Release\
   - npm install
-  - npm test
   - 7z a face-recognition.zip c:\projects\face-recognition
   
 artifacts:
