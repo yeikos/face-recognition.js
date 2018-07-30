@@ -27,6 +27,7 @@ build: off
 
 test_script:
   - cd c:\projects\face-recognition
+  - copy c:\projects\face-recognition\openblas\* c:\projects\face-recognition\build\Release
   - npm install
   - npm test
   - 7z a face-recognition.zip c:\projects\face-recognition
