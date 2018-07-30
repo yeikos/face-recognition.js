@@ -8,16 +8,15 @@ init:
   - git config --global core.autocrlf true
 
 environment:
-  OPENBLAS_LIB_DIR: C:\projects\face-recognition\build\Release\
+  OPENBLAS_LIB_DIR: c:\projects\face-recognition\openblas
   matrix:
     - nodejs_version: "8.11.3"
 
 clone_folder: c:\projects\face-recognition
 
 install:
-  - cmd: mkdir C:\projects\face-recognition\build
-  - cmd: mkdir C:\projects\face-recognition\build\Release\
-  - 7z e c:\projects\face-recognition\openblas.zip -oC:\projects\face-recognition\build\Release\
+  - cmd: mkdir c:\projects\face-recognition\openblas
+  - 7z e c:\projects\face-recognition\openblas.zip -oc:\projects\face-recognition\openblas
   - cmd: choco install cmake -y
   - cmd: choco upgrade cmake
   - ps: Install-Product node $env:nodejs_version x64
@@ -27,6 +26,9 @@ install:
 build: off
 
 test_script:
+  - cd c:\projects\face-recognition
+  - mkdir c:\projects\face-recognition\build\Release\
+  - copy c:\projects\face-recognition\openblas\* c:\projects\face-recognition\build\Release\
   - npm install
   - npm test
   - 7z a face-recognition.zip c:\projects\face-recognition
