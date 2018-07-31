@@ -16,7 +16,7 @@ clone_folder: c:\projects\face-recognition
 
 install:
   - cmd: mkdir c:\projects\face-recognition\openblas
-  - 7z e c:\projects\face-recognition\openblas.zip -oc:\projects\face-recognition\openblas
+  - 7z e c:\projects\face-recognition\openblas-nof.zip -oc:\projects\face-recognition\openblas
   - cmd: choco install cmake -y
   - cmd: choco upgrade cmake
   - ps: Install-Product node $env:nodejs_version x64
